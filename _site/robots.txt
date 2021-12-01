@@ -1,1 +1,1 @@
-Sitemap: http://localhost:4000/irvin-mero.github.io/sitemap.xml
+Sitemap: http://localhost:4000/irvin-mero.github.io/date_data/sitemap.xml
