@@ -1,4 +1,5 @@
 
+baseurl: "date_data"
 
 
 collections:
@@ -25,4 +26,3 @@ plugins:
     - jekyll-seo-tag
 permalink: /:categories/:year/:month/:day/:title:output_ext
 
-baseurl: "date_data"
