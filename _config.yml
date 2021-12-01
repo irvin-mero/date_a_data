@@ -25,5 +25,5 @@ plugins:
     - jekyll-seo-tag
 permalink: /:categories/:year/:month/:day/:title:output_ext
 
-baseurl: "irvin-mero.github.io/date_data"
+baseurl: "date_data"
 url: ""
