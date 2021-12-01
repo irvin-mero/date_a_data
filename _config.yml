@@ -1,5 +1,5 @@
 
-baseurl: "date_data"
+baseurl: /date_data
 
 
 collections:
