@@ -1,8 +1,0 @@
-- name: Home
-  link: /
-- name: About
-  link: {{site.baseurl}}/about.html
-- name: Blog
-  link: {{site.baseurl}}/blog.html
-- name: Staff
-  link: {{site.baseurl}}/staff.html
