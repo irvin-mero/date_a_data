@@ -1,9 +1,6 @@
 baseurl: /date_data
 
 
-collections:
-    authors:
-        output: true
 defaults:
     - scope:
         path: ""
@@ -16,7 +13,7 @@ defaults:
       values:
         layout: "post"
     - scope:
-        path: "{{site.baseurl}}/"
+        path: ""
       values:
         layout: "default"
 plugins:
