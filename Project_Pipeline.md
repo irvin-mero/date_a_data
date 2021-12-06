@@ -105,7 +105,7 @@ plt.show()
 ```
 
 
-![png](/assets/images/output_8_0.png)
+![png]({{site.baseurl}}/assets/images/output_8_0.png)
 
 
 
@@ -126,7 +126,7 @@ plt.show()
 ```
 
 
-![png](/assets/images/output_9_0.png)
+![png]({{site.baseurl}}/assets/images/output_9_0.png)
 
 
 ## Task 2 Sentiment Analysis
