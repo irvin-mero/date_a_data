@@ -1,6 +1,5 @@
 baseurl: /date_data
 
-
 defaults:
     - scope:
         path: ""
