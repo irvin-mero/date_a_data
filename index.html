@@ -137,6 +137,24 @@ background: "assets/images/donald_biden.jpg"
                 the topic. Their tones are quite different over topics like "Ireland", "Defeat in Trial" and "ISIS", but
                 appear to be similar over others.
 
+                <h3> How much can you be narcissist ? </h3>
+
+                <!--{% include self_men_network.html%}-->
+                <p>We also decided that it would be interesting to vizualize self-mentionning frequency,
+                    so we computed the frequency of self-mentionning as the fraction of self-mentions in
+                    the total mentions for each politicians.
+                    In this plot, the 40 politicians with highest self-mentionning frequencies are shown.
+                    Color represents party belongings and size of nodes represent the number of frequency.
+                    Here are revealed the most narcissist american politicians.</p>
+                <img src="assets/images/self_men_hist.jpg" style="width:50%" class="center">
+
+                <h3> Sentiment & Topics : plot (drowpdown list and color arrows): What do they like to talk about ?
+                </h3>
+                {% include topic_sentiment.html%}
+
+
+
+
                 <h3> How biases may influence the results ?</h3>
                 <p>
                     Since all the sources of the quotations is from the media which could be subject to their own
@@ -163,9 +181,6 @@ background: "assets/images/donald_biden.jpg"
                         <img src="assets/images/tone_by_biasGroup_party.png" alt="tone by party" style="width:30%">
                     </div>
                 </div>
-
-                <h4> Conclusion ? are the communities part of the real party </h4>
-
 
                 <h2>Make World Great Again</h2>
                 <p>By the way, how do you think the US politician talk about foreign politician ?
