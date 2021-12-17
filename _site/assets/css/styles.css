@@ -4,11 +4,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 .container { margin-top: 100px; margin-left: 150px; margin-right: 150px; }
 
-#Abstract { padding-top: 30px; }
+#Introduction { padding-top: 30px; }
+
+#American_Eco { padding-top: 30px; }
+
+#Introduction { padding-top: 30px; }
+
+#World { padding-top: 30px; }
 
 #Conclusion { padding-top: 30px; }
-
-#Section_About_Us { padding-top: 30px; }
 
 /* The hero image */
 .hero-image { /* Set a specific height */ height: 80%; /* Position and center the image to scale nicely on all screens */ background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed; width: 100%; top: -10px; }
@@ -19,6 +23,8 @@
 footer { display: inline-block; text-align: center; width: 100%; }
 
 body { height: 100%; width: 100%; top: 0px; margin-left: 0%; background-color: white; }
+
+.centerPlot { align-items: center; justify-content: center; }
 
 html { scroll-behavior: smooth; height: 100%; width: 100%; margin-left: 0%; }
 
@@ -47,6 +53,12 @@ main > nav {
 /* ul, ol { list-style: none; margin: 0; padding: 0; } li { margin-left: 1rem; } h1 { font-weight: 300; top: 300px; } */
 /** page layout **/
 main { display: grid; max-width: 100em; width: 100%; margin: 0 auto; }
+
+/**center the images**/
+.center { display: block; margin-left: auto; margin-right: auto; width: 50%; }
+
+/**color for the links**/
+a:link, a:visited { color: lightskyblue; cursor: auto; }
 
 /* Style the links inside the navigation bar */
 /*
@@ -91,7 +103,7 @@ main { display: grid; max-width: 100em; width: 100%; margin: 0 auto; }
 
 */
 /* Change the font of all the page */
-a, p, h1, h2, h3, h4, h5, h6 { font-family: 'Nunito', sans-serif; line-height: 150%; }
+a, p, h1, h2, h3, h4, h5, h6 { font-family: 'Nunito', sans-serif; line-height: 150%; text-align: justify; }
 
 a, p { font-size: 20px; }
 

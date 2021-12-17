@@ -25,9 +25,11 @@
 
 }
 
-#Abstract {padding-top:30px;}
+#Introduction {padding-top:30px;}
+#American_Eco {padding-top:30px;}
+#Introduction {padding-top:30px;}
+#World{padding-top:30px;}
 #Conclusion{padding-top:30px;}
-#Section_About_Us{padding-top:30px;}
 
 /* The hero image */
 .hero-image {
@@ -81,7 +83,11 @@ body {
   
   //z-index: 10000;
 }
-
+//center the html plots
+.centerPlot{
+  align-items: center;
+  justify-content: center;
+}
 html{
   scroll-behavior: smooth;
   height: 100%;
@@ -180,7 +186,20 @@ main {
   width: 100%;
   margin: 0 auto;
 }
+/**center the images**/
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
+/**color for the links**/
+a:link, a:visited { 
+  color: lightskyblue;
+  //text-decoration: underline;
+  cursor: auto;
+}
 
 /* Style the links inside the navigation bar */
 /*
@@ -240,6 +259,7 @@ main {
 a,p, h1,h2,h3,h4,h5,h6 {
   font-family: 'Nunito', sans-serif;
   line-height: 150%;
+  text-align: justify;
 }
 a,p{
   font-size: 20px;
