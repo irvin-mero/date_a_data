@@ -9,182 +9,248 @@ background: "assets/images/donald_biden.jpg"
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>                        
-              </button>
-              <a class="navbar-brand" href="#">Home</a>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Home</a>
             </div>
-        <div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="#Introduction">Introduction</a></li>
-                <li><a href="#American_Eco">US politican ecosystem</a></li>
-                <li><a href="#World">US-World interaction</a></li>
-                <li><a href="#Conclusion">Conclusion</a></li>
-                <li><a href="#Section_About_Us">About Us</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
+            <div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#Introduction">Introduction</a></li>
+                        <li><a href="#American_Eco">US politican ecosystem</a></li>
+                        <li><a href="#World">US-World interaction</a></li>
+                        <li><a href="#Conclusion">Conclusion</a></li>
+                        <li><a href="#Section_About_Us">About Us</a></li>
+                    </ul>
+                    </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
-  
+
     <div class="container">
-        
+
         <section id="Introduction">
             <h1>Introduction</h1>
 
 
             <p>
-            It is known that the US has a bi-polar political landscape, with Democrats 
-            on one side and Republicans on the other. Our project aims to verify and back up this assumption with 
-            <a href ="https://zenodo.org/record/4277311#.YbzxWS1zjOR"> quotebank data</a> by visualizing the political landscape in a network model.
+                It is known that the US has a bi-polar political landscape, with Democrats
+                on one side and Republicans on the other. Our project aims to verify and back up this assumption with
+                <a href="https://zenodo.org/record/4277311#.YbzxWS1zjOR"> quotebank data</a> by visualizing the
+                political landscape in a network model.
             </p>
 
             <p>
-            With the rich political data in the dataset (we found that 13% of the quotations are uttered by politicians. And 48% of
-            the political quotations are from the US),we decide to analyze 
-            the network between politicians through their quotation and tell a datastory about the ecosystem of the political 
-            world focusing on the United States.
+                With the rich political data in the dataset (we found that 13% of the quotations are uttered by
+                politicians. And 48% of
+                the political quotations are from the US),we decide to analyze
+                the network between politicians through their quotation and tell a datastory about the ecosystem of the
+                political
+                world focusing on the United States.
             </p>
             <p>
-                This data story is based to this network using the bi-directional frequency, sentiment and topics when 
+                This data story is based to this network using the bi-directional frequency, sentiment and topics when
                 US politicians mention other politicians (self-mentions, US or world-wide).
             </p>
             <p>
-            The network connections will be analyzed in-depth to reveal the structure of central nodes and communities/hubs.
-            It will also be extended with Natural Language Processing technique as sentiment analysis and machine learning technique
-            Latent Dirichlet Allocation topic clustering (unsupervised) to reveal more information (emotion and recurrent topics) in the mentions.
+                The network connections will be analyzed in-depth to reveal the structure of central nodes and
+                communities/hubs.
+                It will also be extended with Natural Language Processing technique as sentiment analysis and machine
+                learning technique
+                Latent Dirichlet Allocation topic clustering (unsupervised) to reveal more information (emotion and
+                recurrent topics) in the mentions.
+            </p>
+
+            <section id="American_Eco">
+                <h1>US-Network</h1>
+                <p>To capture interactions between politicians, we built a directed network graph where each node
+                    is a politician and each edge represent mentions of one politician by another one.
+                    The weight of each edge represent the number of occurencies of it. We applied the
+                    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6771089&tag=1">Kernighan-Lin
+                        algorithm</a>
+                    to split the graph into 2 communities. Each node has two attributes:
+                    the party the politician belongs to (Democratic, Republican or directly affiliated parties)
+                    and the community it has been assigned to. The goal of this part of our work was to
+                    check wether US politicians interact more within their own party or not.
                 </p>
-            
-        <section id="American_Eco">
-            <h1>US-Network</h1>
-            <p>To capture interactions between politicians, we built a directed network graph where each node 
-            is a politician and each edge represent mentions of one politician by another one. 
-            The weight of each edge represent the number of occurencies of it. We applied the 
-            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6771089&tag=1">Kernighan-Lin algorithm</a>
-            to split the graph into 2 communities. Each node has two attributes:
-            the party the politician belongs to (Democratic, Republican or directly affiliated parties) 
-            and the community it has been assigned to. The goal of this part of our work was to 
-            check wether US politicians interact more within their own party or not.
-            </p>
 
-            <h2>American politician network only based in mentioning</h2>
-            {% include simple_network_structure.html%}
-            <p>This plot goal is to get a feeling about the structure of our network. 
-                Only the 20 most central nodes of each community and main edges between them are shown. 
-                The size of the node represent the PageRank centrality. To have an easier interpretable plot, 
-                we rendered the graph undirected and added up the weights of the edges between each couple of node. 
-                The width of the edges then represent the weights of the edges. Feel free to explore!
-            </p>
-            
-
-
-            <h3>Who is the most popular and/or gossipy ? </h3>
-
-            <img src="assets/images/network_analysis.jpg" style="width:90%" class="center">
-            
-            <p>From the main nodes PageRank centrality and out degree distribution we can watch some interesting differencies. 
-                As it can be expected, Trump is most talking and most mentioned politician, followed by Obama who 
-                is mentioned very often but does not mentions other politicians a lot for example. In the same sense,
-                George W. Bush is mentioned a lot but does not even appears on the 20 most talkative politicians. 
-                The third graph, the node total degree distribution, shows that the distribution follows a power 
-                law distribution, as expected for this type of big social network graph.
-            </p>
+                <h2>American politician network only based in mentioning</h2>
+                {% include simple_network_structure.html%}
+                <p>This plot goal is to get a feeling about the structure of our network.
+                    Only the 20 most central nodes of each community and main edges between them are shown.
+                    The size of the node represent the PageRank centrality. To have an easier interpretable plot,
+                    we rendered the graph undirected and added up the weights of the edges between each couple of node.
+                    The width of the edges then represent the weights of the edges. Feel free to explore!
+                </p>
 
 
 
-            <h3>Does the democratic and Republican makes really "parties" ? </h3>
-            <p>
-                We computed the correlation between the party and network community belongings of the politicians, 
-                and the results are statistically significant (<a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman's correlation coefficient</a>
-                 = 0.03 with a p-value of 0.012) in a 95% two-sided confidence interval. We can therefore say that there 
-                 is a statiscally significant correlation between real Republican/Democratic politicians and the community 
-                 bisection of our network, meaning US Republican/Democratic politicians have the tendency to more often 
-                 mention their peers rather than opposite party politicians in the medias.
-            </p>
-            {% include bipartite_network.html%}
-            <p>This plot shows the main nodes of each community in a bipartite layout corresponding to bisection community, as for before,
-                 fill color represent the party belonging, surronding color represent bisection community belongings and edges width 
-                 represent edge weights.
-            </p>
+                <h3>Who is the most popular and/or gossipy ? </h3>
 
-            <h4> Conclusion ? are the communities part of the real party </h4>
+                <img src="assets/images/network_analysis.jpg" style="width:90%" class="center">
+
+                <p>From the main nodes PageRank centrality and out degree distribution we can watch some interesting
+                    differencies.
+                    As it can be expected, Trump is most talking and most mentioned politician, followed by Obama who
+                    is mentioned very often but does not mentions other politicians a lot for example. In the same
+                    sense,
+                    George W. Bush is mentioned a lot but does not even appears on the 20 most talkative politicians.
+                    The third graph, the node total degree distribution, shows that the distribution follows a power
+                    law distribution, as expected for this type of big social network graph.
+                </p>
+
+                <h4>Is him/she being nice to others on the media? </h4>
+
+                Here the politician's general expression on others is simply defined as the product of his or her
+                mean sentiment score and the pagerank importance.
+                <img src="assets/images/speakers_impact.png" style="width:30%" class="center">
+
+                <h3>Does the democratic and Republican makes really "parties" ? </h3>
+                <p>
+                    We computed the correlation between the party and network community belongings of the politicians,
+                    and the results are statistically significant (<a
+                        href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman's
+                        correlation coefficient</a>
+                    = 0.03 with a p-value of 0.012) in a 95% two-sided confidence interval. We can therefore say that
+                    there
+                    is a statiscally significant correlation between real Republican/Democratic politicians and the
+                    community
+                    bisection of our network, meaning US Republican/Democratic politicians have the tendency to more
+                    often
+                    mention their peers rather than opposite party politicians in the medias.
+                </p>
+                {% include bipartite_network.html%}
+                <p>This plot shows the main nodes of each community in a bipartite layout corresponding to bisection
+                    community, as for before,
+                    fill color represent the party belonging, surronding color represent bisection community belongings
+                    and edges width
+                    represent edge weights.
+                </p>
+
+                <img src="assets/images/sentiment_by_party_topic.png" style="width:30%" class="center">
+
+                The mean sentiment value over a topic grouped by parties can be viewed as the general tone of a party on
+                the topic. Their tones are quite different over topics like "Ireland", "Defeat in Trial" and "ISIS", but
+                appear to be similar over others.
+
+                <h4> Conclusion ? are the communities part of the real party </h4>
 
 
 
 
 
-            <h3> How much can you be narcissist ?  </h3>
+                <h3> How much can you be narcissist ? </h3>
 
-            <!--{% include self_men_network.html%}-->
-            <p>We also decided that it would be interesting to vizualize self-mentionning frequency, 
-                so we computed the frequency of self-mentionning as the fraction of self-mentions in 
-                the total mentions for each politicians.
-                In this plot, the 40 politicians with highest self-mentionning frequencies are shown. 
-                Color represents party belongings and size of nodes represent the number of frequency. 
-                Here are revealed the most narcissist american politicians.</p>
-            <img src="assets/images/self_men_hist.jpg" style="width:50%" class="center">
+                <!--{% include self_men_network.html%}-->
+                <p>We also decided that it would be interesting to vizualize self-mentionning frequency,
+                    so we computed the frequency of self-mentionning as the fraction of self-mentions in
+                    the total mentions for each politicians.
+                    In this plot, the 40 politicians with highest self-mentionning frequencies are shown.
+                    Color represents party belongings and size of nodes represent the number of frequency.
+                    Here are revealed the most narcissist american politicians.</p>
+                <img src="assets/images/self_men_hist.jpg" style="width:50%" class="center">
 
-            <h3> Sentiment & Topics : plot (drowpdown list and color arrows): What do they like to talk about ? </h3>
-            {% include topic_sentiment.html%}
-        
-            <h3> Bias :  histogram :  Question: how biases could change results ?</h*>
-            
-        </section>
-        <section id="World">
-    <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
-    <!--<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>-->
+                <h3> Sentiment & Topics : plot (drowpdown list and color arrows): What do they like to talk about ?
+                </h3>
+                {% include topic_sentiment.html%}
 
-    <!-- Load the element definition -->
-    <!--<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>-->
+                <h3> How biases may influence the results ?</h3>
+                <p>
+                    Since all the sources of the quotations is from the media which could be subject to their own
+                    bias, the objectiveness of our result is evaluated. The source provided in the quote
+                    bank is matched with the external bias dataset, so that the media sources can be classified into
+                    three categories to see if there is any significant difference.
+                </p>
+                <!-- <img src="assets/images/bias_hist.png" style="width:50%" class="left"> -->
+                <!-- <img src="assets/images/tone_by_biasGroup_party.png" style="width:50%" class=""> -->
 
-            <h2>Make World Great Again</h2>
-            <p>How are the interactions of politicians around the world ?
-            </p>
-            <p>
-                We decide to visualize it with a global map. With the plot below, you can choose from which party do you want to
-                visualize the mentions and at the year (2015-2020). The plot is interactive, you can zoom and decide which country
-                you are interested on, the width of the lines represent the frequency according to the year and the colour of the 
-                country is the mean sentiment from all/party politician. Have fun and look how it envolves and differs by years/parties!
-             </p>
-            {% include World_Graph.html%}
-            <p>What is most remarkable here ? First, in general the most mentioned country prize is for ... RUSSIAN (not very surprising...
-                 right?). Except for one year and one party ... Can you find it ? Hint: When there were a presidential crisis ? Hint 2 (
-                but you have certainly already find it ! 
-                 ): It was in South America.
-            </p>
-            <p>
-                Secondly, it seems republicans doesn't have really the same thinkings (No way !!). Carefull, all the parties give a average,
-                it doesn't repressent 
-            </p>
-        </section>
+                <p>
+                    It is found that the tone of two parties varies by different media. In general, the Democratic party
+                    speaks more positively in far left news (p value &lt; 0.05). Similarly, the Republicans speaks more
+                    positively in far right news (p value &#8810; 0.05) but with a more significant statistical
+                    difference.
+                    Note that for all media, the general tone of two parties are significantly different.
+                </p>
+
+                <div class="row">
+                    <div class="column">
+                        <img src="assets/images/bias_hist.png" alt="bias histogram" style="width:30%">
+                    </div>
+                    <div class="column">
+                        <img src="assets/images/tone_by_biasGroup_party.png" alt="tone by party" style="width:30%">
+                    </div>
+                </div>
+
+            </section>
+            <section id="World">
+                <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+                <!--<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>-->
+
+                <!-- Load the element definition -->
+                <!--<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>-->
+
+                <h2>Make World Great Again</h2>
+                <p>How are the interactions of politicians around the world ?
+                </p>
+                <p>
+                    We decide to visualize it with a global map. With the plot below, you can choose from which party do
+                    you want to
+                    visualize the mentions and at the year (2015-2020). The plot is interactive, you can zoom and decide
+                    which country
+                    you are interested on, the width of the lines represent the frequency according to the year and the
+                    colour of the
+                    country is the mean sentiment from all/party politician. Have fun and look how it envolves and
+                    differs by years/parties!
+                </p>
+                {% include World_Graph.html%}
+                <p>What is most remarkable here ? First, in general the most mentioned country prize is for ... RUSSIAN
+                    (not very surprising...
+                    right?). Except for one year and one party ... Can you find it ? Hint: When there were a
+                    presidential crisis ? Hint 2 (
+                    but you have certainly already find it !
+                    ): It was in South America.
+                </p>
+                <p>
+                    Secondly, it seems republicans doesn't have really the same thinkings (No way !!). Carefull, all the
+                    parties give a average,
+                    it doesn't repressent
+                </p>
+            </section>
 
         </section>
         <section id="Conclusion">
             <h1>Conclusion</h1>
             <p>
-                The polarization of the United States politics is already backed by multiple studies, but many of them is done
-                indirectly via survey on ideology or public behavior change 
-                (<a href="https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/">NW et al., 2014</a>; 
-                <a href= "https://psycnet.apa.org/record/2020-78563-040">Wilson et al., 2020</a>). The network 
-                on the individual politician level is a direct reflection of the political structure with quantitative metrics 
+                The polarization of the United States politics is already backed by multiple studies, but many of them
+                is done
+                indirectly via survey on ideology or public behavior change
+                (<a
+                    href="https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/">NW
+                    et al., 2014</a>;
+                <a href="https://psycnet.apa.org/record/2020-78563-040">Wilson et al., 2020</a>). The network
+                on the individual politician level is a direct reflection of the political structure with quantitative
+                metrics
                 like connectivity or betweenness centrality.
 
-                On a global level, some major events also occur during the time span of quotebank (2015 - 2020) like Brexit, 
-                the US-China trade war, COVID pandemic, etc., which could be interesting to see if it is reflected from the 
+                On a global level, some major events also occur during the time span of quotebank (2015 - 2020) like
+                Brexit,
+                the US-China trade war, COVID pandemic, etc., which could be interesting to see if it is reflected from
+                the
                 global political network.
             </p>
-            
+
         </section>
         <section id="Section_About_Us">
             <h1>About Us</h1>
             <hooter>
-            <!-- Heading to link to -->
+                <!-- Heading to link to -->
                 <!-- Add icon library -->
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <div class="row">
                     <div class="column">
                         <div class="card">
@@ -192,8 +258,8 @@ background: "assets/images/donald_biden.jpg"
                             <h1>Guoyuan Liu</h1>
                             <p class="title">Materials Science and Engineering</p>
                             <p>EPFL</p>
-                            <a href="https://github.com/LyKex"><i class="fa fa-github"></i></a> 
-                            <a href="mailto:guoyuan.liu@epfl.ch"><i class="fa fa-envelope"></i></a> 
+                            <a href="https://github.com/LyKex"><i class="fa fa-github"></i></a>
+                            <a href="mailto:guoyuan.liu@epfl.ch"><i class="fa fa-envelope"></i></a>
                         </div>
                     </div>
                     <div class="column">
@@ -202,19 +268,19 @@ background: "assets/images/donald_biden.jpg"
                             <h1>Thomas Castiglione</h1>
                             <p class="title">Life Sciences Engineering</p>
                             <p>EPFL</p>
-                            <a href="https://github.com/tomcastigl" targer= "_blank"><i class="fa fa-github"></i></a> 
-                            <a href="mailto:thomas.castiglione@epfl.ch"><i class="fa fa-envelope"></i></a> 
+                            <a href="https://github.com/tomcastigl" targer="_blank"><i class="fa fa-github"></i></a>
+                            <a href="mailto:thomas.castiglione@epfl.ch"><i class="fa fa-envelope"></i></a>
 
-                        </div>  
+                        </div>
                     </div>
                     <div class="column">
                         <div class="card">
-                            <img src="assets/images/Chuanfang.png"  style="width:90%">
+                            <img src="assets/images/Chuanfang.png" style="width:90%">
                             <h1>Chuanfang Ning</h1>
                             <p class="title">Microengineering</p>
                             <p>EPFL</p>
-                            <a href="https://github.com/Chuanfang-Neptune"><i class="fa fa-github"></i></a> 
-                            <a href="mailto:chuanfang.ning@epfl.ch"><i class="fa fa-envelope"></i></a> 
+                            <a href="https://github.com/Chuanfang-Neptune"><i class="fa fa-github"></i></a>
+                            <a href="mailto:chuanfang.ning@epfl.ch"><i class="fa fa-envelope"></i></a>
 
                         </div>
                     </div>
@@ -224,12 +290,12 @@ background: "assets/images/donald_biden.jpg"
                             <h1>Irvin Mero Zambrano</h1>
                             <p class="title">Life Sciences Engineering</p>
                             <p>EPFL</p>
-                            <a href="https://github.com/irvin-mero"><i class="fa fa-github"></i></a> 
-                            <a href="mailto:irvin.merozambrano@epfl.ch"><i class="fa fa-envelope"></i></a> 
+                            <a href="https://github.com/irvin-mero"><i class="fa fa-github"></i></a>
+                            <a href="mailto:irvin.merozambrano@epfl.ch"><i class="fa fa-envelope"></i></a>
 
-                        </div>   
+                        </div>
                     </div>
-                </div>  
+                </div>
             </hooter>
 
         </section>
