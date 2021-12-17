@@ -126,8 +126,8 @@ background: "assets/images/donald_biden.jpg"
                 </p>
                 {% include bipartite_network.html%}
                 <p>This plot shows the main nodes of each community in a bipartite layout corresponding to bisection
-                    community, as for before,
-                    fill color represent the party belonging, surronding color represent bisection community belongings
+                    community.
+                    Fill color represent the party belonging, surronding color represent bisection community belongings
                     and edges width
                     represent edge weights.
                 </p>
@@ -158,6 +158,11 @@ background: "assets/images/donald_biden.jpg"
 
                 <h3> Sentiment & Topics: What do they like to talk about ?
                 </h3>
+                <p>The politicians could have different opinions on different topics. With the interactive plot below we visualize the politicians' 
+                sentiment when mentioning each other in the context of different topics. The dropdown list has to be updated to a new value to get the plot going.
+                And the topic comes from the intrepretaion of mentioning contents from LDA Analysis. The width of the edge represents the bi-diretional mentioning frequency while
+                the arrows represent the sentiment and uni-directional mentioning frequency about the specific topic.
+                </p>
                 {% include topic_sentiment.html%}
 
                 <h3> How biases may influence the results ?</h3>
