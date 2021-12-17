@@ -18,7 +18,9 @@ background: "/assets/images/donald_biden.jpg"
         <div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#Abstract">Abstract</a></li>
+                <li><a href="#Introduction">Introduction</a></li>
+                <li><a href="#American_Eco">US politican ecosystem</a></li>
+                <li><a href="#World">US-World interaction</a></li>
                 <li><a href="#Conclusion">Conclusion</a></li>
                 <li><a href="#Section_About_Us">About Us</a></li>
                 </ul>
@@ -31,60 +33,55 @@ background: "/assets/images/donald_biden.jpg"
   
     <div class="container">
         
-        <section id="Abstract">
-        <h1>Abstract</h1>
+        <section id="Introduction">
+            <h1>Introduction</h1>
+            <p>mention bipolarity and explain the research question:
+                capture the interaction, observe it there is a clear structure, american ecosystem structure.
+            </p>
+        <section id="American_Eco">
+            <h1>In-Network</h1>
+            <h3>Snapshot of american politician ecosystem :</h3>
+            <h4> description of the exploration of network. </h4>
+            
 
+            <h3>firts plot : american politician network only based in mentioning. </h3>
+            <h4> 
+                Add notes to help the user to explore the network.
+            </h4>
+            <h3>second plot : node centrality(ies): </h3>
+            <h4>explain what we observe . analyze the Indegres(PageRank)/outdegress : which most speakers and centralities, 
+                fraction: in/out (histo). out=most annoying politician...
+            </h4>
 
+            <h3>Question: Does the democratic and Republican makes really "parties" ? </h3>
+            <h4>Explain how we consider communities.
+                Plot =  Biparty plot based on communty and parties . Conclusion ? are the communities part of the real party 
+            </h4>
+            <h3> plot Self-mentioning : </h3>
+            <h4>(consider how much the politician mentions himself according to the mentions done ) How much 
+                i am narcissist ? 
+            </h4>
+            <h3> Sentiment & Topics : plot (drowpdown list and color arrows): What do they like to talk about ? </h3>
+            <h3> Bias :  histogram :  Question: how biases could change results ?</h*>
+            
+        </section>
+        <section id="World">
     <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
-    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>-->
 
     <!-- Load the element definition -->
-    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+    <!--<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>-->
 
-    <!-- Simply set the `src` attribute to your MD file and win -->
-    <!--<zero-md src="network_usa.md"></zero-md>-->
-    <!--<zero-md src="Project_Pipeline.md"></zero-md>-->
-   <!--<zero-md src="network_usa.md"></zero-md>-->
+            <h2>World plot</h2>
+            <h3>How democratic and republicans international opinion and frequency ?</h3>
+            {% include global_plot_real_sentiment.html%}
+        </section>
 
-   <p>Try interactive plot global3</p>
-   {% include global_plot3.html%}
- 
-   <!--<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~irvin1248/3.embed"></iframe>
-   <p>Try interactive plot just exporting 1</p>
-{% include test11.html%}
-   <p>Try interactive plot just exporting 2</p>
-   {% include test112.html %}-->
         </section>
         <section id="Conclusion">
             <h1>Conclusion</h1>
             
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
-            <p>We are the best !!!</p>
             
-
         </section>
         <section id="Section_About_Us">
             <h1>About Us</h1>
