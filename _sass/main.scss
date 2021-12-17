@@ -1,23 +1,8 @@
-/*
-.current {
-  color: green;
-  background: rgb(148, 135, 222);
-
-}
-.others{
-  color:white;
-}
-*/
-
-
-
-
 
 /* Structure of all the text*/
 
 .container {
   
-  //max-width: 1100px;
   margin-top: 100px;
   margin-left: 150px;
   margin-right: 150px;
@@ -33,7 +18,6 @@
 
 /* The hero image */
 .hero-image {
-  //background-image: linear-gradient(rgba(12, 12, 12, 0.5), rgba(231, 231, 231, 0.5)), url("/assets/images/usa_flag.jpg");
 
   /* Set a specific height */
   height: 80%;
@@ -42,19 +26,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  //position: relative;
-  // To check is best
   background-attachment: fixed;
-  //display: hide;
-  //background
-
   width: 100%;
   top: -10px;
 }
 
 /* Place text in the middle of the image */
 .hero-text {
-  //font-family: 'Courier New', Courier, monospace;
   font-family: Georgia, serif;
   text-align: center;
   position: absolute;
@@ -81,7 +59,6 @@ body {
   margin-left: 0%;
   background-color: rgb(255, 255, 255);
   
-  //z-index: 10000;
 }
 //center the html plots
 .centerPlot{
@@ -95,88 +72,6 @@ html{
   margin-left: 0%;
 }
 
-
-/* Add a background color to the top navigation */
-/*
-main > nav {
-  background-color: rgb(119, 119, 119);
-  position: sticky;
-  height: 53px;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  align-self: start;
-  //overflow: scroll;
-  
-}
-*/
-/* 3. ScrollSpy active styles (see JS tab for activation) */
-/*
-.section-nav li.active > a {
-  //color: #333;
-  font-weight: 500;
-  background-color: #35abf0;
-  color: white;
-}
-*/
-/* Sidebar Navigation */
-/*
-.section-nav {
-  border-left: 0px;
-  width: 100%;
-  padding-left: 0;
-  //border-left: 1px solid #efefef;
-}
-*/
-/*
-.section-nav a {
-
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-
-  //text-decoration: none;
-  display: block;
-  //padding: .125rem 0;
-  //color: #ccc;
-  transition: all 50ms ease-in-out;  💡 This small transition makes setting of the active state smooth 
-}
-*/
-
-/*
-.section-nav a:hover,
-.section-nav a:focus {
-  background-color: #ddd;
-  color: black;
-  //color: #666;
-}
-*/
-
-/** Poor man's reset **/
-/*
-* {
-  box-sizing: border-box;
-}
-*/
-/*
-ul, ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  margin-left: 1rem;
-}
-
-h1 {
-  font-weight: 300;
-  top: 300px;
-}
-*/
 
 /** page layout **/
 main {
@@ -201,60 +96,6 @@ a:link, a:visited {
   cursor: auto;
 }
 
-/* Style the links inside the navigation bar */
-/*
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-
-
-}
-*/
-/*
-.topnav:focus {
-  outline: none;
-  background-color: transparent;
-}
-*/
-
-
-/* Change the color of links on hover */
-/*
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-*/
-/* Add a color to the active/current link */
-/*
-.topnav a.active {
-  background-color: #35abf0;
-  color: white;
-
-}
-*/
-/*
-.box{
-  background: rgb(93, 221, 210);
-  font-size: 21px;
-  text-align: left;
- //float:left;
-  max-width: 1450px;
-  position: sticky;
-  top: 0px;
-  height: 30px;
-  padding: 14px 16px;
-
-
-
-
-}
-
-*/
 /* Change the font of all the page */
 a,p, h1,h2,h3,h4,h5,h6 {
   font-family: 'Nunito', sans-serif;
@@ -265,18 +106,6 @@ a,p{
   font-size: 20px;
 }
 
-/*
-.back{
-  //background: rgb(147, 183, 250);
-  //background-image: linear-gradient(rgba(211, 210, 210, 0.651),rgba(255, 255, 255, 0.808)) , url("/assets/images/usa_flag.jpg");
-  //background-image: url("/assets/images/usa_flag.jpg");
-  //background-image
-  //opacity: 0.5;
-  //image
-  
-}
-
-*/
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -302,20 +131,7 @@ a,p{
   margin: 40px;
 
 }
-/*
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-*/
+
 a {
   text-decoration: none;
   font-size: 20px;
@@ -327,11 +143,6 @@ button:hover, a:hover {
   opacity: 0.7;
 }
 
-/*
-* {
-  box-sizing: border-box;
-}
-*/
 /* Float four columns side by side */
 .column {
   float: left;
@@ -358,50 +169,3 @@ button:hover, a:hover {
     margin-bottom: 20px;
   }
 }
-
-/*
-@media (min-width: 992px) {
-  padding-top: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-  background-color: transparent;
-  transition: background-color 0.3s ease-in-out;
-  .topnav-brand {
-    padding: .5rem 0;
-    color: fade-out($white, .5);
-  }
-  .topnav-link {
-    transition: none;
-    padding: 2rem 1.5rem;
-    color: fade-out($white, .5);
-    &:hover {
-      color: fade-out($white, .25);
-    }
-    &:active {
-      color: white;
-    }
-  }
-  &.navbar-shrink {
-    background-color: $white;
-    .navbar-brand {
-      color: $black;
-    }
-    .nav-link {
-      color: $black;
-      padding: 1.5rem 1.5rem 1.25rem;
-      border-bottom: 0.25rem solid transparent;
-      &:hover {
-        color: $primary;
-      }
-      &:active {
-        color: darken($primary, 15%);
-      }
-      &.active {
-        color: $primary;
-        outline: none;
-        border-bottom: 0.25rem solid $primary;
-      }
-    }
-  }
-}
-*/

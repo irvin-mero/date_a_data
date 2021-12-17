@@ -19,7 +19,7 @@ background: "assets/images/donald_biden.jpg"
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li><a href="#Introduction">Introduction</a></li>
-                        <li><a href="#American_Eco">US politican ecosystem</a></li>
+                        <li><a href="#American_Eco">US politician ecosystem</a></li>
                         <li><a href="#World">US-World interaction</a></li>
                         <li><a href="#Conclusion">Conclusion</a></li>
                         <li><a href="#Section_About_Us">About Us</a></li>
@@ -66,7 +66,7 @@ background: "assets/images/donald_biden.jpg"
             </p>
 
             <section id="American_Eco">
-                <h1>US-Network</h1>
+                <h1>US politician ecosystem</h1>
                 <p>To capture interactions between politicians, we built a directed network graph where each node
                     is a politician and each edge represent mentions of one politician by another one.
                     The weight of each edge represent the number of occurencies of it. We applied the
@@ -103,11 +103,12 @@ background: "assets/images/donald_biden.jpg"
                     law distribution, as expected for this type of big social network graph.
                 </p>
 
-                <h4>Is him/she being nice to others on the media? </h4>
+                <h3>Is him/she being nice to others on the media? </h3>
 
-                Here the politician's general expression on others is simply defined as the product of his or her
+                <p>Here the politician's general expression on others is simply defined as the product of his or her
                 mean sentiment score and the pagerank importance.
-                <img src="assets/images/speakers_impact.png" style="width:30%" class="center">
+                </p>
+                <img src="assets/images/speakers_impact.png" style="width:50%" class="center">
 
                 <h3>Does the democratic and Republican makes really "parties" ? </h3>
                 <p>
@@ -131,29 +132,33 @@ background: "assets/images/donald_biden.jpg"
                     represent edge weights.
                 </p>
 
-                <img src="assets/images/sentiment_by_party_topic.png" style="width:30%" class="center">
-
-                The mean sentiment value over a topic grouped by parties can be viewed as the general tone of a party on
+                <img src="assets/images/sentiment_by_party_topic.png" style="width:50%" class="center">
+                <p> </p>
+                <p>The mean sentiment value over a topic grouped by parties can be viewed as the general tone of a party on
                 the topic. Their tones are quite different over topics like "Ireland", "Defeat in Trial" and "ISIS", but
                 appear to be similar over others.
-
+                </p>
                 <h3> How much can you be narcissist ? </h3>
+                <p>
+                To analyze self-mentioning, we first show the politicians with the highest total count of self-mentions, 
+                and then show the politicians having the highest frequency of self-mentions among their overall mentions.   
+                </p>
+                {% include self_men_occurencies.html%}
 
-                <!--{% include self_men_network.html%}-->
+
+                {% include self_men_network.html%}
+
                 <p>We also decided that it would be interesting to vizualize self-mentionning frequency,
                     so we computed the frequency of self-mentionning as the fraction of self-mentions in
                     the total mentions for each politicians.
                     In this plot, the 40 politicians with highest self-mentionning frequencies are shown.
                     Color represents party belongings and size of nodes represent the number of frequency.
-                    Here are revealed the most narcissist american politicians.</p>
+                    Here are revealed the most narcissist american politicians.You can see the rankings below.</p>
                 <img src="assets/images/self_men_hist.jpg" style="width:50%" class="center">
 
-                <h3> Sentiment & Topics : plot (drowpdown list and color arrows): What do they like to talk about ?
+                <h3> Sentiment & Topics: What do they like to talk about ?
                 </h3>
                 {% include topic_sentiment.html%}
-
-
-
 
                 <h3> How biases may influence the results ?</h3>
                 <p>
@@ -162,8 +167,8 @@ background: "assets/images/donald_biden.jpg"
                     bank is matched with the external bias dataset, so that the media sources can be classified into
                     three categories to see if there is any significant difference.
                 </p>
-                <!-- <img src="assets/images/bias_hist.png" style="width:50%" class="left"> -->
-                <!-- <img src="assets/images/tone_by_biasGroup_party.png" style="width:50%" class=""> -->
+                <img src="assets/images/bias_hist.png" style="width:50%" class="center">
+                <img src="assets/images/tone_by_biasGroup_party.png" style="width:50%" class="center">
 
                 <p>
                     It is found that the tone of two parties varies by different media. In general, the Democratic party
@@ -172,16 +177,9 @@ background: "assets/images/donald_biden.jpg"
                     difference.
                     Note that for all media, the general tone of two parties are significantly different.
                 </p>
-
-                <div class="row">
-                    <div class="column">
-                        <img src="assets/images/bias_hist.png" alt="bias histogram" style="width:30%">
-                    </div>
-                    <div class="column">
-                        <img src="assets/images/tone_by_biasGroup_party.png" alt="tone by party" style="width:30%">
-                    </div>
-                </div>
-
+            </section>
+            <section id ="World">
+                <h1>US-World iteraction </h1>
                 <h2>Make World Great Again</h2>
                 <p>By the way, how do you think the US politician talk about foreign politician ?
                 </p>
@@ -249,9 +247,9 @@ background: "assets/images/donald_biden.jpg"
                     <div class="column">
                         <div class="card">
                             <img src="assets/images/Guoyuang.jpeg" style="width:90%">
-                            <h1>Guoyuan Liu</h1>
-                            <p class="title">Materials Science and Engineering</p>
-                            <p>EPFL</p>
+                            <h1 style="text-align: center">Guoyuan Liu</h1>
+                            <p style="text-align: center" class="title">Materials Science and Engineering</p>
+                            <p style="text-align: center">EPFL</p>
                             <a href="https://github.com/LyKex"><i class="fa fa-github"></i></a>
                             <a href="mailto:guoyuan.liu@epfl.ch"><i class="fa fa-envelope"></i></a>
                         </div>
@@ -259,9 +257,9 @@ background: "assets/images/donald_biden.jpg"
                     <div class="column">
                         <div class="card">
                             <img src="assets/images/Thomas.jpeg" style="width:72%">
-                            <h1>Thomas Castiglione</h1>
-                            <p class="title">Life Sciences Engineering</p>
-                            <p>EPFL</p>
+                            <h1 style="text-align: center">Thomas Castiglione</h1>
+                            <p style="text-align: center" class="title">Life Sciences Engineering</p>
+                            <p style="text-align: center">EPFL</p>
                             <a href="https://github.com/tomcastigl" targer="_blank"><i class="fa fa-github"></i></a>
                             <a href="mailto:thomas.castiglione@epfl.ch"><i class="fa fa-envelope"></i></a>
 
@@ -270,9 +268,9 @@ background: "assets/images/donald_biden.jpg"
                     <div class="column">
                         <div class="card">
                             <img src="assets/images/Chuanfang.png" style="width:90%">
-                            <h1>Chuanfang Ning</h1>
-                            <p class="title">Microengineering</p>
-                            <p>EPFL</p>
+                            <h1 style="text-align: center">Chuanfang Ning</h1>
+                            <p style="text-align: center" class="title">Microengineering</p>
+                            <p style="text-align: center">EPFL</p>
                             <a href="https://github.com/Chuanfang-Neptune"><i class="fa fa-github"></i></a>
                             <a href="mailto:chuanfang.ning@epfl.ch"><i class="fa fa-envelope"></i></a>
 
@@ -281,9 +279,9 @@ background: "assets/images/donald_biden.jpg"
                     <div class="column">
                         <div class="card">
                             <img src="assets/images/Irvin.jpeg" style="width:65%">
-                            <h1>Irvin Mero Zambrano</h1>
-                            <p class="title">Life Sciences Engineering</p>
-                            <p>EPFL</p>
+                            <h1 style="text-align: center">Irvin Mero Zambrano</h1>
+                            <p style="text-align: center" class="title">Life Sciences Engineering</p>
+                            <p style="text-align: center">EPFL</p>
                             <a href="https://github.com/irvin-mero"><i class="fa fa-github"></i></a>
                             <a href="mailto:irvin.merozambrano@epfl.ch"><i class="fa fa-envelope"></i></a>
 
